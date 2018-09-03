@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>360 Video Control Example</title>
+    <meta name="description" content="360 Video — A-Frame">
+    <script src="../build.js"></script>
+	  <script src="https://rawgit.com/oscarmarinmiro/aframe-video-controls/master/dist/aframe-video-controls.min.js"></script>
+	   <script src="./js/aframe-extras.js"></script>
+<!--	   <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>-->
+
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+
+<!--        <video id="m1" src="./video/m1.mp4"></video>-->
+        <video autoplay="false" loop="true" id="m1" src="./video/m1.mp4"></video>
+        
+		 <img id="piso1" src="./video/piso.jpg" crossorigin="anonymous">
+      </a-assets>
+
+		
+		
+	 <!-- <a-entity
+			camera
+				active="true"
+				look-controls="pointerLockEnabled:true"
+				position="0 10 49"
+				userHeight="10"
+				checkpoint-controls="mode:animate"
+				universal-controls="movementEasing:15; movementAcceleration:180; speed:170;"
+				kinematic-body=""
+				rotation="0 0 0 "
+				scale=""
+				visible=""
+				velocity="300"
+				gamepad-controls=""
+				keyboard-controls=""
+				touch-controls=""
+				hmd-controls=""
+				mouse-controls=""
+				spectator="true"
+				zoom="0.98"
+				far="10001"
+				fov="50"
+				near="1"
+				
+				
+			>
+		  <a-entity id="cursor" position="0 0 -2" geometry="primitive: ring; radiusOuter: 0.016; radiusInner: 0.01" material="color: #ff9; shader: flat; opacity: 0.8" scale="2 2 2"> </a-entity>
+		  
+        </a-entity>-->
+        
+  
+		
+      <a-camera>
+          <a-cursor id="cursor" color="yellow"></a-cursor>
+      </a-camera>
+
+<!--      <a-videosphere src="#m1" rotation="0 180 0"></a-videosphere>-->
+      
+    
+
+    <a-video webkit-playsinline id="moon" src="#m1" height="2" width="7" position="0 2 -8"  rotation="0 35 0"></a-video>
+    
+        <a-entity static-body="" id="floor1" geometry="primitive: plane;
+            height: 100;
+            depth: 1;
+            width: 18" material="src: #piso1;
+            color: #fafafa;
+            metalness: .1;
+            repeat: 1 2.5;
+            roughness: 30" rotation="-90 0 0">
+    </a-entity>
+		
+<!--
+	<a-entity video-controls="src:#m1" 
+				position="0 0 0"
+				rotation="0 0 0" visible="true"
+			  height="7" width="2">
+			   
+	  </a-entity>
+-->
+
+      <a-entity video-controls="src:#m1" position="45 -10 45" rotation="90 45 45"></a-entity>
+
+    </a-scene>
+<!--  <script src="https://aframe.io/releases/0.3.0/aframe-inspector.min.js"></script>-->
+  </body>
+</html>
